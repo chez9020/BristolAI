@@ -1,0 +1,160 @@
+body {
+    background-image: url("media/bristol_assets/BACKGROUND/creador_avatar_background.jpg"); /* Agrega la URL de tu imagen */
+    background-size: cover;  /* Ajusta la imagen al tamaño del body */
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 500; /* Para asegurar que se use el peso Medium */
+    font-size: 20px;
+    color: white; /* Color del texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 80%;  /* Ajusta el ancho del contenedor */
+    height: 500px; /* Ajusta la altura del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+h1 {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.gender-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px 50px;
+}
+
+.option {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.3s;
+    background-color: azure;
+}
+
+.option:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #ff6fff;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: black;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.femenino, .masculino, .otro {
+    mask-image: url('media/bristol_assets/2_pantalla_genero/mujer.png'); /* Replace with actual path */
+    width: 100px;  /* Ajusta el ancho de la imagen */
+    height: 100px; /* Ajusta la altura de la imagen */
+    /* -webkit-mask-image: url('media/bristol_assets/2_pantalla_genero/mujer.png'); */
+}
+
+.masculino {
+    mask-image: url('media/bristol_assets/2_pantalla_genero/hombre.png'); /* Replace with actual path */
+    /* -webkit-mask-image: url('masculino-icon.svg'); */
+}
+
+.otro {
+    mask-image: url('media/bristol_assets/2_pantalla_genero/otro.png'); /* Replace with actual path */
+    /* -webkit-mask-image: url('otro-icon.svg'); */
+}
+
+
+.option {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.3s;
+    display: inline-block;
+    text-align: center;
+}
+
+.option:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.option input[type="radio"]:checked + .icon {
+    border: 2px solid #ff6fff;
+}
+
+.gender-options p {
+    margin: 0;
+    color: gray;
+}
+
+.navigation-dots {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 50px 0;
+}
+
+.navigation-dots span {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.navigation-dots .active {
+    background: #ff6fff;
+}
+
+.botones-genero, .botones-personalidad, .botones-personalidad, .botones-evento, .botones-expertise, .botones-super-poder {
+    display: flex;
+    gap: 45px;
+    justify-content: center;
+    background-color: none; /* Color de fondo similar al resaltado */
+    color: white; /* Texto en blanco para buen contraste */
+    border: none;
+    /* padding: 10px 20px; */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 40px; /* Espacio superior para separar del formulario */
+}
+
+.botones-personalidad button, .botones-genero button, .botones-personalidad button, .botones-evento button, .botones-expertise button, .botones-super-poder button {
+    width: 300px;   /* Ajusta el ancho del botón */
+    height: 300px;  /* Ajusta la altura del botón */
+  }
+  
+.botones-personalidad button img, .botones-genero button img, .botones-personalidad button img, .botones-evento button img, .botones-expertise button img, .botones-super-poder button img {
+    max-width: 100%;  /* Ajusta la imagen al tamaño del botón */
+    max-height: 100%; /* Ajusta la imagen al tamaño del botón */
+  }
+
+button[type="submit"] {
+    background-color: none; /* Color más oscuro al pasar el cursor */
+    border: none;
+    border-radius: 30px;
+    padding: 2px 2px;
+}
+
+button[type="submit"]:hover {
+    background-color: #e05ee0; /* Color más oscuro al pasar el cursor */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
+}
+
+button[type="submit"]:focus {
+    outline: none; /* Elimina el contorno predeterminado al enfocar */
+    box-shadow: 0 0 0 3px rgba(255, 110, 255, 0.5); /* Añade un contorno de sombra */
+}

@@ -1,0 +1,96 @@
+body {
+    background: url("media/bristol_assets/BACKGROUND/creador_avatar_background.jpg");
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 500; /* Para asegurar que se use el peso Medium */
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 80%; 
+    margin: 0 auto; 
+}
+
+.content {
+    display: flex;  /* Usa flexbox para alinear la imagen y el mensaje */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+.robot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;  /* Ajusta el ancho del contenedor al ancho de la imagen */
+    padding-left: 80px;
+}
+
+.robot-image {
+    width: 100%;  /* La imagen ocupa todo el ancho del contenedor */
+    height: 300px;
+    width: 300px;
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+.robot-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* Color del nombre en blanco */
+    background-color: black; /* Fondo negro para el nombre */
+    padding: 5px 10px; /* Añade padding al nombre */
+    display: inline-block; /* Permite que el elemento ocupe el ancho necesario */
+    width: 94%; /* El nombre ocupa todo el ancho del contenedor */
+}
+
+.mensaje {
+    display: flex;        /* Convierte .mensaje en un contenedor flexible */
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: left;   /* Centra los elementos horizontalmente */
+    text-align: left;    /* Centra el texto */
+    padding-left: 200px;   /* Si aún necesitas este padding */
+}
+
+.mensaje h1 {
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.botones {
+    display: flex;           /* Convierte .botones en un contenedor flexible */
+    justify-content: center;  /* Centra los botones horizontalmente */
+    gap: 20px;              /* Espacio entre los botones (opcional) */
+}
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.descargar {
+    color: white;
+}
+
+.inicio {
+    color: white;
+}
+
+.boton img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}

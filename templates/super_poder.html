@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Selecciona un Género</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="{{ url_for('super_poder') }}">
+            <h2>¿CUAL ES TU SÚPER PODER?</h2>
+            <div class="botones-super-poder">
+                <button type="submit" name="super_poder" value="Conectar con cualquier persona"><img src="../static/media/bristol_assets/8_pantalla_super_poder/conectar.png" alt="Conectar con cualquier persona"></button>
+                <button type="submit" name="super_poder" value="Resolución de Problemas"><img src="../static/media/bristol_assets/8_pantalla_super_poder/resolucion.png" alt="Resolución de Problemas"></button>
+                <button type="submit" name="super_poder" value="Aprender Rapidamente"><img src="../static/media/bristol_assets/8_pantalla_super_poder/aprender.png" alt="Aprender Rapidamente"></button>
+                <button type="submit" name="super_poder" value="Impulsar Energia Colectiva"><img src="../static/media/bristol_assets/8_pantalla_super_poder/energia.png" alt="Impulsar Energia Colectiva"></button>
+            </div>
+        </form>
+        <div class="navigation-dots">
+            <span></span>
+            <span></span>
+            <span class="active"></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>

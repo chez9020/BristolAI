@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Robot listo!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='generar.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="robot-container">
+                <img src="{{ imagen_url }}" alt="Imagen del robot" class="robot-image">
+                <div class="robot-name">{{ nombre }}</div>
+            </div>
+            <div class="mensaje">
+                <h1>¡FELICIDADES, TU ROBOT ESTÁ LISTO!</h1>
+                <p>Has diseñado un robot totalmente único.</p>
+                <p>Si deseas cambiar algo o explorar nuevas opciones puedes volver al inicio.</p>
+                <div class="botones">
+                    <a href="{{ imagen_url }}" download class="boton descargar">
+                        <img src="/static/media/bristol_assets/9_resultado/Boton_descargar.png" alt="Descargar"> Descargar
+                    </a>
+                    <a href="/" class="boton inicio">
+                        <img src="/static/media/bristol_assets/9_resultado/boton_regresar_inicio.png" alt="Volver al inicio"> Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

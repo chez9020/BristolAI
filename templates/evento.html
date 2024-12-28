@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Selecciona un Género</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="{{ url_for('evento') }}">
+            <h2>¿QUE TE EMOCIONA MÁS DE ESTE EVENTO?</h2>
+            <div class="botones-evento">
+                <button type="submit" name="evento" value="Conexiones"><img src="../static/media/bristol_assets/6_pantalla_emocion_del_evento/conexiones.png" alt="Conexiones"></button>
+                <button type="submit" name="evento" value="Aprendizaje"><img src="../static/media/bristol_assets/6_pantalla_emocion_del_evento/aprendizaje.png" alt="Aprendizaje"></button>
+                <button type="submit" name="evento" value="Diversión"><img src="../static/media/bristol_assets/6_pantalla_emocion_del_evento/diversion.png" alt="Diversión"></button>
+                <button type="submit" name="evento" value="Explorar Nuevos Productos"><img src="../static/media/bristol_assets/6_pantalla_emocion_del_evento/explorar.png" alt="Explorar Nuevos Productos"></button>
+            </div>
+        </form>
+        <div class="navigation-dots">
+            <span></span>
+            <span></span>
+            <span class="active"></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>

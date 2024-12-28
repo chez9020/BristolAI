@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Selecciona un Género</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="{{ url_for('personalidad') }}">
+            <h2>¿QUÉ TIPO DE PERSONALIDAD PREFIERES QUE TENGA TU ROBOT?</h2>
+            <div class="botones-personalidad">
+                <button type="submit" name="personalidad" value="Divertido Amigable"><img src="../static/media/bristol_assets/4_pantalla_personalidad/divertido.png" alt="Divertido Amigable"></button>
+                <button type="submit" name="personalidad" value="Profesional y Serio"><img src="../static/media/bristol_assets/4_pantalla_personalidad/profesional.png" alt="Profesioanl y Serio"></button>
+                <button type="submit" name="personalidad" value="Creativo e Imaginativo"><img src="../static/media/bristol_assets/4_pantalla_personalidad/creativo.png" alt="Creativo e Imaginativo"></button>
+            </div>
+        </form>
+        <div class="navigation-dots">
+            <span></span>
+            <span></span>
+            <span class="active"></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>

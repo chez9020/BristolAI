@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Selecciona un Género</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="{{ url_for('estilo') }}">
+            <h2>SELECCIONA UN ESTILO PARA TU AVATAR ROBOT</h2>
+            <div class="botones-estilo">
+                <button type="submit" name="estilo" value="Minimalista"><img src="../static/media/bristol_assets/5_pantalla_estilo/minimalista.png" alt="Minimalista"></button>
+                <button type="submit" name="estilo" value="Restro Furturista"><img src="../static/media/bristol_assets/5_pantalla_estilo/retro.png" alt="Restro Furturista"></button>
+                <button type="submit" name="estilo" value="Divertido y Colorido"><img src="../static/media/bristol_assets/5_pantalla_estilo/colorido.png" alt="Divertido y Colorido"></button>
+                <button type="submit" name="estilo" value="Tecnologico y Elegante"><img src="../static/media/bristol_assets/5_pantalla_estilo/elegante.png" alt="Tecnologico y Elegante"></button>
+            </div>
+        </form>
+        <div class="navigation-dots">
+            <span></span>
+            <span></span>
+            <span class="active"></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>

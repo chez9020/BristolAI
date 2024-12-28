@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombra tu robot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='nombre.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>¿COMO TE GUSTARIA QUE SE LLAMARA TU ROBOT?</h1>
+    <form method="POST" action="{{ url_for('nombre') }}"> 
+        <div class="input-container">
+            <input type="text" id="nombre-robot" name="nombre" placeholder="Ingresa el nombre para tu robot">
+            <button type="submit">
+                <img src="../static/media/bristol_assets/3_pantalla_nombre/boton_enviar.png" alt="Enviar"> 
+            </button>
+        </div>
+    </form>
+    <div class="navigation-dots">
+        <span></span>
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+    </div>
+    </div>
+</body>
+</html>
