@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nombra tu robot</title>
+    <title>Nombra tu Avatar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='nombre.css') }}">
 </head>
 <body>
     <div class="container">
-    <h1>¿COMO TE GUSTARIA QUE SE LLAMARA TU ROBOT?</h1>
+    <h1>¿COMO TE GUSTARIA QUE SE LLAMARA TU AVATAR?</h1>
     <form method="POST" action="{{ url_for('nombre') }}"> 
         <div class="input-container">
             <input type="text" id="nombre-robot" name="nombre" placeholder="Ingresa el nombre para tu robot" required>
