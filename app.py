@@ -85,7 +85,7 @@ def generar_imagen():
     expertise = session.get('expertise')
     super_poder = session.get('super_poder')
 
-    prompt_completo = f"Un androide futurista con rostro humanoide, manos con cinco dedos y una postura bípeda, de genero {genero}, con una actitud {personalidad}, con un estilo {estilo}, que le encante {evento}, con el superpoder de {super_poder}, en un ambiente cosmos rosa **sin texto**"
+    prompt_completo = f"Un androide futurista con rostro humanoide, manos con cinco dedos y una postura bípeda, de genero {genero}, con una actitud {personalidad}, con un estilo {estilo}, que le encante {evento}, haciendo {super_poder}, en un ambiente cosmos rosa concéntrate en los detalles visuales, no incluir ningún elemento textual"
     #    prompt_completo = f"Un robot futurista con rasgos humanos cyberpunk de genero {genero}, con una actitud {personalidad}, con un estilo {estilo}, que le encante {evento}, que sea experto en {expertise}, que tenga la habilidad de {super_poder} en un ambiente cosmos rosa"
     response = client.images.generate(
         model="dall-e-3",  # Modelo a utilizar
