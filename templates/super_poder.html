@@ -11,18 +11,31 @@
         <form method="POST" action="{{ url_for('super_poder') }}">
             <h2>¿CUAL ES TU SÚPER PODER?</h2>
             <div class="botones-super-poder">
-                <button type="submit" name="super_poder" value="Conectar con cualquier persona"><img src="../static/media/bristol_assets/8_pantalla_super_poder/conectar.png" alt="Conectar con cualquier persona"></button>
-                <button type="submit" name="super_poder" value="Resolución de Problemas"><img src="../static/media/bristol_assets/8_pantalla_super_poder/resolucion.png" alt="Resolución de Problemas"></button>
-                <button type="submit" name="super_poder" value="Aprender Rapidamente"><img src="../static/media/bristol_assets/8_pantalla_super_poder/aprender.png" alt="Aprender Rapidamente"></button>
-                <button type="submit" name="super_poder" value="Impulsar Energia Colectiva"><img src="../static/media/bristol_assets/8_pantalla_super_poder/energia.png" alt="Impulsar Energia Colectiva"></button>
+                <button type="submit" name="super_poder" value="Telepatía"><img src="../static/media/bristol_assets/8_pantalla_super_poder/conectar.png" alt="Conectar con cualquier persona"></button>
+                <button type="submit" name="super_poder" value="Perspicacia"><img src="../static/media/bristol_assets/8_pantalla_super_poder/resolucion.png" alt="Resolución de Problemas"></button>
+                <button type="submit" name="super_poder" value="Superinteligencia"><img src="../static/media/bristol_assets/8_pantalla_super_poder/aprender.png" alt="Aprender Rapidamente"></button>
+                <button type="submit" name="super_poder" value="Manipulación de energía"><img src="../static/media/bristol_assets/8_pantalla_super_poder/energia.png" alt="Impulsar Energia Colectiva"></button>
             </div>
         </form>
+        <div id="loading" style="display: none;">
+            <img src="{{ url_for('static', filename='loading.gif') }}" alt="Cargando...">
+        </div>
         <div class="navigation-dots">
             <span></span>
             <span></span>
-            <span class="active"></span>
             <span></span>
+            <span></span>
+            <span class="active"></span>
         </div>
     </div>
+    <script>
+      const form = document.querySelector('form');
+      const loading = document.getElementById('loading');
+
+      form.addEventListener('submit', () => {
+        form.style.display = 'none';    // Ocultar el formulario
+        loading.style.display = 'block';  // Mostrar el GIF al enviar el formulario
+      });
+    </script>
 </body>
 </html>

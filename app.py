@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, request, session, redirect, url_for, Response
 from openai import OpenAI
-import json, os
+import os, requests
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('FLASK_SECRET_KEY')
@@ -24,8 +24,14 @@ def genero():
 def nombre():
     if request.method == 'POST':
         nombre = request.form.get("nombre")
+        if not nombre:  # Verificar si el nombre está vacío
+            # Mostrar un mensaje de error al usuario
+            return render_template('nombre.html', error="Por favor, ingresa un nombre para el robot.") 
+        
+        nombre = nombre.capitalize()  # Formatear el nombre
         session['nombre'] = nombre  # Guardar el nombre en la sesión
         return redirect(url_for('personalidad')) 
+
     return render_template('nombre.html')
 
 @app.route('/personalidad', methods=["GET", "POST"])
@@ -79,8 +85,8 @@ def generar_imagen():
     expertise = session.get('expertise')
     super_poder = session.get('super_poder')
 
-    prompt_completo = f"Un robot futurista con rasgos humanos cyberpunk {genero}, con una personalidad {personalidad}, un estilo {estilo}, que le encante tener {evento}, que sea experto en {expertise}, que tenga la habilidad de {super_poder} en un ambiente cosmos rosa"
-
+    prompt_completo = f"Un androide futurista con rostro humanoide, manos con cinco dedos y una postura bípeda, de genero {genero}, con una actitud {personalidad}, con un estilo {estilo}, que le encante {evento}, con el superpoder de {super_poder}, en un ambiente cosmos rosa **sin texto**"
+    #    prompt_completo = f"Un robot futurista con rasgos humanos cyberpunk de genero {genero}, con una actitud {personalidad}, con un estilo {estilo}, que le encante {evento}, que sea experto en {expertise}, que tenga la habilidad de {super_poder} en un ambiente cosmos rosa"
     response = client.images.generate(
         model="dall-e-3",  # Modelo a utilizar
         prompt=prompt_completo,  # Usar el prompt completo con el género
@@ -92,5 +98,21 @@ def generar_imagen():
 
     return render_template("generar_imagen.html", imagen_url=imagen_url, nombre=nombre)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route('/descargar_imagen', methods=['GET'])
+def descargar_imagen():
+    nombre = session.get('nombre')
+    imagen_url = request.args.get('imagen_url')  # Obtener la URL de la imagen de la petición
+    
+    # Obtener la imagen desde la URL
+    response = requests.get(imagen_url, stream=True)
+    response.raise_for_status()  # Verificar si la petición fue exitosa
+
+    # Devolver la imagen como respuesta con las cabeceras correctas
+    return Response(
+        response.iter_content(chunk_size=1024),
+        mimetype=response.headers['Content-Type'],
+        headers={'Content-Disposition': f'attachment; filename="{nombre}.png"'} 
+    )
+
+# if __name__ == "__main__":
+#     app.run(debug=True)

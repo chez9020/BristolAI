@@ -17,11 +17,11 @@
                 <div class="robot-name">{{ nombre }}</div>
             </div>
             <div class="mensaje">
-                <h1>¡FELICIDADES, TU ROBOT ESTÁ LISTO!</h1>
+                <h1>¡FELICIDADES, TU AVATAR ESTÁ LISTO!</h1>
                 <p>Has diseñado un robot totalmente único.</p>
                 <p>Si deseas cambiar algo o explorar nuevas opciones puedes volver al inicio.</p>
                 <div class="botones">
-                    <a href="{{ imagen_url }}" download class="boton descargar">
+                    <a href="{{ url_for('descargar_imagen', imagen_url=imagen_url) }}" class="boton descargar">
                         <img src="/static/media/bristol_assets/9_resultado/Boton_descargar.png" alt="Descargar"> Descargar
                     </a>
                     <a href="/" class="boton inicio">

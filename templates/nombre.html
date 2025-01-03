@@ -11,7 +11,7 @@
     <h1>¿COMO TE GUSTARIA QUE SE LLAMARA TU ROBOT?</h1>
     <form method="POST" action="{{ url_for('nombre') }}"> 
         <div class="input-container">
-            <input type="text" id="nombre-robot" name="nombre" placeholder="Ingresa el nombre para tu robot">
+            <input type="text" id="nombre-robot" name="nombre" placeholder="Ingresa el nombre para tu robot" required>
             <button type="submit">
                 <img src="../static/media/bristol_assets/3_pantalla_nombre/boton_enviar.png" alt="Enviar"> 
             </button>
